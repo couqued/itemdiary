@@ -1,6 +1,0 @@
-module Pods_keep_product_keep_productTests {
-  umbrella header "Pods-keep_product-keep_productTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
