@@ -24,3 +24,13 @@
 
 ## 기타
 추후 backend 자바소스도 push 예정
+
+## screen shot
+
+![Screenshot_20240205_140606_Google Play Store](https://github.com/couqued/itemdiary/assets/133190204/d72e8435-277d-48bd-9e7e-4f9ee8864d8e)
+![Screenshot_20240205_140611_Google Play Store](https://github.com/couqued/itemdiary/assets/133190204/2a6c88d8-53ee-48e1-abca-4f792ba6a834)
+![Screenshot_20240205_140624_Google Play Store](https://github.com/couqued/itemdiary/assets/133190204/00819795-2d90-4f16-a8d5-7083cc58449f)
+![Screenshot_20240205_140627_Google Play Store](https://github.com/couqued/itemdiary/assets/133190204/f3e8e7a2-66b0-408b-bcdc-21303cc9874e)
+![Screenshot_20240205_140003_ ](https://github.com/couqued/itemdiary/assets/133190204/95e0c3f7-5eed-4e1c-8681-ccade2ef633e)
+
+
