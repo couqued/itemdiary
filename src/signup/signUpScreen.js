@@ -19,6 +19,7 @@
  import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
  function SignUpScreen ({navigation, route}) {
+  const domain = 'http://127.0.0.1:8080';
    const [splash, setSplash] = useState(null);
 
    const {isSignUp} = route.params || {};
@@ -110,7 +111,7 @@
   const logIn = ({email, password}) => {
     setSplash(true);
 
-    axios.post('http://127.0.0.1:8080/keepproduct/api/user/login', {
+    axios.post(domain+'/keepproduct/api/user/login', {
       USER_ID: email, USER_PASSWORD: password
     })
     .then(result=>{
@@ -136,7 +137,7 @@
   const signUp = ({email, password}) => {
     setSplash(true);
 
-    axios.post('http://127.0.0.1:8080/keepproduct/api/user/duplicateIdCheck', {
+    axios.post(domain+'/keepproduct/api/user/duplicateIdCheck', {
       USER_ID: email
     })
     .then(result=>{
@@ -155,7 +156,7 @@
 }
 
 const userSave = ({email, password}) => {
-  axios.post('http://127.0.0.1:8080/keepproduct/api/user/userIdRegister', {
+  axios.post(domain+'/keepproduct/api/user/userIdRegister', {
     USER_ID: email,
     USER_PASSWORD: password
   })

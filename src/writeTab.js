@@ -21,6 +21,7 @@
 
  function TabWriteScreen ({navigation}) {
 
+  const domain = 'http://127.0.0.1:8080';
   const [splash, setSplash] = useState(null);
 
    //제목
@@ -124,7 +125,7 @@
 
     setSplash(true);
 
-    axios.post('http://127.0.0.1:8080/keepproduct/api/product/register', {
+    axios.post(domain+'/keepproduct/api/v1/item', {
       USER_ID: userId,
       TITLE: title,
       DATE: date,
@@ -135,7 +136,7 @@
     })
     .then(result=>{
       setSplash(false);
-      if(result.data > 0){
+      if(result.data.resStatus){
         navigation.push("Main");
       }else{
         Alert.alert('', '저장에 실패하였습니다. 다시 시도해주세요.', [{text: '확인'}]);

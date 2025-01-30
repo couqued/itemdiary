@@ -18,6 +18,7 @@
 
 
  function SignUpScreenEmail ({navigation, route}) {   
+  const domain = 'http://127.0.0.1:8080';
 
    const onSubmit = async () => {
      Keyboard.dismiss();
@@ -50,7 +51,7 @@
    };
 
   const logIn = ({email, password}) => {
-    axios.post('http://127.0.0.1:8080/keepproduct/api/user/login', {
+    axios.post(domain+'/keepproduct/api/user/login', {
       USER_ID: email, USER_PASSWORD: password
     })
     .then(result=>{
@@ -71,7 +72,7 @@
   }
 
   const signUp = ({email, password}) => {
-    axios.post('http://127.0.0.1:8080/keepproduct/api/user/duplicateIdCheck', {
+    axios.post(domain+'/keepproduct/api/user/duplicateIdCheck', {
       USER_ID: email
     })
     .then(result=>{

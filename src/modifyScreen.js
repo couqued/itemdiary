@@ -143,7 +143,7 @@
    prodModify = () => {
     setSplash(true);
 
-    axios.post('http://127.0.0.1:8080/keepproduct/api/product/modify', {
+    axios.put(domain+'/keepproduct/api/v1/item', {
       //TODO
       SEQ: seq,
       TITLE: title,
@@ -157,7 +157,7 @@
     .then(result=>{
       setSplash(false);
       
-      if(result.data > 0){
+      if(result.data.resStatus){
         navigation.push("Main");
       }else{
         Alert.alert('', '수정에 실패하였습니다. 다시 시도해주세요.', [{text: '확인'}]);

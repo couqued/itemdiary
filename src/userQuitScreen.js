@@ -75,7 +75,7 @@
     });
 
     setSplash(true);
-    axios.post('http://127.0.0.1:8080/keepproduct/api/user/quit', {
+    axios.delete(domain+'/keepproduct/api/user/quit', {
       USER_ID: userId,
       USER_PASSWORD: password
     })

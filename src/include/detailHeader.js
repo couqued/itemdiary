@@ -14,6 +14,7 @@ import axios from 'axios';
 import Splash from '../../src/utils/splash';
 
 function DetailHeader ({productData}) {
+  const domain = 'http://127.0.0.1:8080';
   const [splash, setSplash] = useState(null);
 
   const navigation = useNavigation();
@@ -48,14 +49,12 @@ function DetailHeader ({productData}) {
   prodDelete = () => {
     setSplash(true);
 
-    axios.post('http://127.0.0.1:8080/keepproduct/api/product/delete', {
-      SEQ: productData.SEQ,
+    axios.delete(domain+'/keepproduct/api/v1/item/'+productData.SEQ, {
     })
     .then(result=>{
       setSplash(false);
       
-      if(result.data > 0){
-        console.log("prodDelete success");
+      if(result.data.resStatus){
         navigation.push("Main");
       }else{
         Alert.alert('', '삭제에 실패하였습니다. 다시 시도해주세요.', [{text: '확인'}]);

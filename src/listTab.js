@@ -151,24 +151,18 @@
   prodList = (userId) => {
     
     setSplash(true);
-    
-    axios.post('http://127.0.0.1:8080/keepproduct/api/product/list', {
-      USER_ID: userId 
+    console.log("userId : " + userId)
+
+    axios.get(domain+'/keepproduct/api/v1/item/'+userId, {
     })
     .then(function(response){
-      setProductList(response.data.result);
+      setProductList(response.data.resData);
       setSplash(false);
     })
-  
-    // .then(result=>{
-    //   alert(JSON.stringify(result.data));
-    //   this.setState(
-    //     {title: result.data.title}
-    //   )
-    // })
     .catch(function(error){
       setSplash(false);
       Alert.alert('', '일시적인 오류로 조회에 실패하였습니다.', [{text: '확인'}]);
+      console.log("error : " + JSON.stringify(error))
     })
     
    }
